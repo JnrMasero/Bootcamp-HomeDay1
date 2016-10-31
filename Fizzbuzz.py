@@ -1,33 +1,19 @@
+"""Create a function fizzBuzz to return 'Fizz', 'Buzz', 'FizzBuzz', or the argument it receives, 
+all depending on the argument of the function, a number that is divisible by, 3, 5, or both 3 and 5, respectively.
+When the number is not divisible by 3 or 5, the number itself should be returned.
+"""
 """FIZZBUZZ"""
 
-print ("")
-print ("This program prints 'Fizz' 'Buzz' or 'FizzBuzz' depending on the input")
-print ("")
-print ("")
-num = int(input("Please enter a number that is a multiple of either 3 or 5: "))
-print ("")
+def fizz_buzz(number):
+  
+  if number%15 == 0: 
+    return "FizzBuzz"
 
-"Code will run if input is a number"
-try:
-  def fizzBuzz(num):
-    
-    if (num <= 0):
-      return "Number must be greater than zero"
-    
-    elif (num % 3 == 0 & num % 5 == 0):
-      return 'FizzBuzz'
-    
-    elif(num % 5 == 0):
-      return 'Buzz'
-    
-    elif (num % 3 == 0):
-      return 'Fizz'
+  elif number%3==0:
+    return "Fizz"
 
-    else:
-      return str(num)+(" is not a multiple of 3 or 5")
-  print (fizzBuzz(num))
-  print ("")
+  elif number%5==0:
+    return "Buzz"
 
-except ValueError:
-  print ("")
-  print ("Input is not a number. Please try again: ")
+  else:
+    return number
