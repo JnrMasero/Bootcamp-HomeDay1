@@ -1,29 +1,46 @@
+#You are to create a Car class that can be used to instantiate various vehicles.
+
+#It takes in arguments that depict the type, model, and name of the vehicle, provided they are set.
+
 class Car(object):
 
-  num_of_wheels = 4
-  speed = 0
-  num_of_doors = 4
-     
-  def __init__(self, name = "General", model = "GM" ,car_type=None):
-    self.name = name
-    self.model = model
-    self.car_type = car_type
-    
-    if self.name == "Porshe" or self.name == "Koenigsegg":
-      self.num_of_doors = 2
-    else:
-      self.num_of_doors
-    
-    if self.car_type == "trailer":
-      self.num_of_wheels = 8
 
-  def drive(self, speed):
-    if self.speed == 3:
-      self.speed = 1000
-      return self
-    elif self.speed == 7:
-      self.speed = 77
-      return self
+    def __init__(self, name='General', model='GM' ,car_type='honda' ):
+        self.car_type = car_type
+        self.model = model
+        self.name = name
+        self.speed = 0
 
-  def is_saloon(self):
-    return self.car_type != "trailer"
+        if name== 'Porshe' or name== 'Koenigsegg':
+            self.num_of_doors = 2
+        else:
+            self.num_of_doors = 4
+
+        if car_type == 'trailer':
+            self.num_of_wheels = 8
+        else:
+            self.num_of_wheels = 4
+
+    def doors(self, num_of_doors):
+        pass
+
+    def drive(self, moving_man):
+        return moving_man
+
+    def drive(self, spd):
+        if self.car_type == 'trailer':
+            self.speed = spd * 11
+        else:
+            self.speed = 10 ** spd
+
+        return self
+
+    def wheels(self, num_of_wheels):
+        return num_of_wheels
+
+
+    def is_saloon(self):
+        if self.car_type ==  'trailer':
+            return False
+        else:
+            return True
