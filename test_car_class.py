@@ -1,3 +1,7 @@
+from unittest import TestCase
+from car_class import Car
+import unittest
+
 class CarClassTest(TestCase):
     """docstring for CarClassTest"""
 
